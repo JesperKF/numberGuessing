@@ -11,6 +11,16 @@ btn.addEventListener('click', function(){
     let input = document.getElementById('userInput').value;
     attempts++; 
 
+    if (isNaN(input) || input.trim() === '') {
+        output.innerHTML = `Hovsa! Her skal der kun være tal. <br><span style="font-size: 0.8em;"> Du har brugt ${attempts} forsøg.`;
+        inputField.classList.add('blink-red');
+
+        setTimeout(() => {
+            inputField.classList.remove('blink-red');
+        }, 1000);
+        return;
+    }
+
     if (input == number){
         output.innerHTML = `Det var korrekt! <br><span style="font-size: 0.8em;"> Dit nummer var ${number}. Du brugte ${attempts} forsøg! 🎉`;
         inputField.classList.add('blink-green');

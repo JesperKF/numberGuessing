@@ -116,3 +116,17 @@ h2 {
     opacity: 0;
   }
 }
+
+.blink-red {
+  animation: blink-red 0.5s ease-in-out;
+}
+
+@keyframes blink-red {
+  0%,
+  100% {
+    background-color: #ffcccc;
+  }
+  50% {
+    background-color: #ffe6e6;
+  }
+}
